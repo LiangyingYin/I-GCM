@@ -19,7 +19,7 @@ gcm_cov_detection <- function(R1,R2,N){
 }
 
 #**********************************************************************************************************************************************
-# @ Description: I-GCM is designed to accurately identify direct causal variable set for the target variable
+# @ Description: InvariantGCM is designed to accurately identify direct causal variable set for the target variable
 # Notes: Make sure each row
 # @ X_assoc: all input variables excluding the environment and target variable, with each row represents one subject
 # @ Y: target variable vector for the same set of subjects
@@ -33,7 +33,7 @@ gcm_cov_detection <- function(R1,R2,N){
 # resid_mat: the residual matrix with each column stores the residuals for all subjects in each performed test
 # all_candidate_causal_set: number of causal variables(The top ranked variables from candidate_features) for each identified causal variable set  
 #**********************************************************************************************************************************************
-I-GCM <- function(X_assoc,Y, envir,change_alpha=0.05,change_gcm=0,num_workers,verbose=FALSE){
+InvariantGCM <- function(X_assoc,Y, envir,change_alpha=0.05,change_gcm=0,num_workers,verbose=FALSE){
     Y_outcome <- Y
     dfnew = data.frame(outcome = Y_outcome, X_assoc)
     dfnew_rankNorm = dfnew
@@ -64,7 +64,7 @@ I-GCM <- function(X_assoc,Y, envir,change_alpha=0.05,change_gcm=0,num_workers,ve
     initial_assoc_len <- ncol(X_assoc)
     resid_mat <- NULL # resid_mat is used to store the product of residuals for all subject
     for(i in initial_assoc_len:1){
-        if verbose{
+        if (verbose){
             cat("This is the test with the first ",i,"variable.\n")
         } 
         present_index_set <- 1:i
