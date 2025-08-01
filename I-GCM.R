@@ -24,7 +24,7 @@ gcm_cov_detection <- function(R1,R2,N){
 # @ X_assoc: all input variables excluding the environment and target variable, with each row represents one subject
 # @ Y: target variable vector for the same set of subjects
 # @ envir: environment variable vector for the same set of subjects
-# @ num_workers: number of threads used for feature selection
+# @ num_workers: number of threads used for feature selection, default num_workers=10
 # @ change_alpha: p-value cutoff used to detect significant GCM change, default alpha=0.05
 # @ change_gcm: absolute gcm change threshold for significant change, default change_gcm=0
 # @ verbose: if verbose=TRUE, the details of the analysis will be print out. The default value is false
@@ -33,7 +33,7 @@ gcm_cov_detection <- function(R1,R2,N){
 # resid_mat: the residual matrix with each column stores the residuals for all subjects in each performed test
 # all_candidate_causal_set: number of causal variables(The top ranked variables from candidate_features) for each identified causal variable set  
 #**********************************************************************************************************************************************
-InvariantGCM <- function(X_assoc,Y, envir,change_alpha=0.05,change_gcm=0,num_workers,verbose=FALSE){
+InvariantGCM <- function(X_assoc,Y, envir,change_alpha=0.05,change_gcm=0,num_workers=10,verbose=FALSE){
     Y_outcome <- Y
     dfnew = data.frame(outcome = Y_outcome, X_assoc)
     dfnew_rankNorm = dfnew
