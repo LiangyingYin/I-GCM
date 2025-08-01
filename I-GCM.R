@@ -64,6 +64,7 @@ InvariantGCM <- function(X_assoc,Y, envir,change_alpha=0.05,change_gcm=0,num_wor
     initial_assoc_len <- ncol(X_assoc)
     res_mat <- matrix(1,nrow=ncol(X_assoc),ncol=3)
     colnames(res_mat)<- c("variables","stat","p")
+    resid_mat <- NULL # resid_mat is used to store the product of residuals for all subject
     for(i in initial_assoc_len:1){
         if (verbose){
             cat("This is the test with the first ",i,"variable.\n")
@@ -84,7 +85,6 @@ InvariantGCM <- function(X_assoc,Y, envir,change_alpha=0.05,change_gcm=0,num_wor
         res_mat[(initial_assoc_len-i+1),3] <- gcm_obj_p
     }
     sample_num <- length(Y)
-    resid_mat <- NULL # resid_mat is used to store the product of residuals for all subject
     causal_set_index <- NULL
     for(j in 1:(nrow(res_mat)-1)){
         base_gcm_stat <- res_mat[j,2]
