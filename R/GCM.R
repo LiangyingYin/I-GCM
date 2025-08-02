@@ -1,19 +1,19 @@
 # Written by yinly, Nov 2, 2022
 # Description: revise the original gcm.test from R package "GeneralisedCovarianceMeasure"
 # output calculated product of residual for each subject, which later on could be used to detect the signficance
-# of statistic change between two gcm tests
+# of statistic change between two gcm tests, for more details, please refer to the original gcm.test() in R package GeneralisedCovarianceMeasure
 #' Calculate the covariance between the calculated GCMs from two different GCM tests
 #' 
-#' @param X TODO
-#' @param Y TODO
-#' @param Z TODO
-#' @param alpha TODO
-#' @param regr.method TODO
-#' @param regr.pars TODO
-#' @param plot.residuals TODO
-#' @param nsim TODO
-#' @param resid.XonZ TODO
-#' @param resid.YonZ TODO
+#' @param X A(nxp)-dimensional matrix (or data frame) with n observations of p variables.
+#' @param Y A(nxp)-dimensional matrix (or data frame) with n observations of p variables.
+#' @param Z A(nxp)-dimensional matrix (or data frame) with n observations of p variables.
+#' @param alpha Significance level of the test.
+#' @param regr.method A string indicating the regression method that is used. Currently implemented are "gam", "xgboost", "kernel.ridge". The regression is performed only if not both resid.XonZ and resid.YonZ are set to NULL.
+#' @param regr.pars Some regression methods require a list of additional options
+#' @param plot.residuals A Boolean indicating whether some plots should be shown.
+#' @param nsim An integer indicating the number of bootstrap samples used to approximate the null distribution of the test statistic.
+#' @param resid.XonZ It is possible to directly provide the residuals instead of performing a regression. If set to NULL, the regression method specified in regr.method is used.
+#' @param resid.YonZ It is possible to directly provide the residuals instead of performing a regression. If set to NULL, the regression method specified in regr.method is used.
 #' 
 #' @return calculated covariance
 #' 
