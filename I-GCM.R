@@ -72,7 +72,7 @@ InvariantGCM <- function(X_assoc,Y, envir,change_alpha=0.05,change_gcm=0,num_wor
         present_index_set <- 1:i
         X <- envir
         Z <- X_assoc[,present_index_set]
-        gcm_obj <- gcm_test(X=X,Y=Y_binary,Z=Z,regr.par=list(max_depth=4,max_delta_step=6), regr.method = "xgboost")
+        gcm_obj <- gcm_test(X=X,Y=Y,Z=Z,regr.par=list(max_depth=4,max_delta_step=6), regr.method = "xgboost")
         gcm_obj_stat <- gcm_obj$test.statistic
         gcm_R <- gcm_obj$R
         gcm_obj_p <- gcm_obj$p.value
