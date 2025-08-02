@@ -1,0 +1,13 @@
+Package: IGCM
+Version: 1.0
+Date: 2025-08-02
+Title: IGCM algorith
+Description: Colors that Karl Broman uses in figures.
+Author: Liangyin Yin <yinliangying@gmail.com>,
+        So Hon-cheong <hcso85@gmail.com>
+Maintainer: Liangyin Yin <yinliangying@gmail.com>,
+            Shi Yujia <yj.shi@outlook.com>,
+            So Hon-cheong <hcso85@gmail.com>
+License: GPL-3
+Encoding: UTF-8
+RoxygenNote: 7.3.2

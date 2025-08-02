@@ -1,7 +1,28 @@
-
-PCSelect_Parallel <- function (y, dm, method = c("parallel"), mem.efficient = FALSE,
-                               num_workers, alpha, corMat = NA, corMethod = "standard",max_ord=5, verbose = FALSE,
-                               directed = FALSE)
+#' Find columns in dm, that have nonzero parcor with y given any other set of columns in dm
+#' 
+#' @param y: Response Vector (length(y)=nrow(dm))
+#' @param dm: Data matrix (rows: samples, cols: nodes)
+#' @param method Character string specifying method; the default, "parallel" provides 
+#' @param an parallelised method to implement all the conditional independence tests.
+#' @param alpha: Significance level of individual partial correlation tests
+#' @param mem.efficient: If TRUE, uses less amount of memory at any time point while running the algorithm
+#' @param num_workers: The numbers of cores CPU to run the algorithm
+#' @param corMethod: "standard" or "Qn" for standard or robust correlation estimation
+#' @param verbose: 0-no output, 1-small output, 2-details
+#' @param directed: Logical; should the output graph be directed?
+#' 
+#' @return a list contain two elements: G and Zmin, where G is the boolean vector with connected nodes and zMin is the minimal Z values.
+#' 
+#' @import data.table
+#' @import coop
+#' @import parallel
+#' @import pcalg
+#' @import GeneralisedCovarianceMeasure
+#' 
+#' @export 
+PCSelect_Parallel <- function(y, dm, method = c("parallel"), mem.efficient = FALSE,
+                              num_workers, alpha, corMat = NA, corMethod = "standard",max_ord=5, verbose = FALSE,
+                              directed = FALSE)
 {
   ##****************************************************************************
   ## Purpose: Find columns in dm, that have nonzero parcor with y given
@@ -257,7 +278,7 @@ PCSelect_Parallel <- function (y, dm, method = c("parallel"), mem.efficient = FA
   }
   #print("parallel calculate cost:")
   #print(Sys.time() - time3)
-  total_t = proc.time() - start_total
+  total_t <- proc.time() - start_total
   #cat("Num CI Tests=", n.edgetests, ",Total CI Tests=", sum(unlist(n.edgetests)),",Total Time=", total_t[3], "\n", sep = " ")
   #cat("total is :", total_t, "\n")
   #cat("cost time 1:", time1 - time0, "cost time 2:", time2 - time1, "\n")

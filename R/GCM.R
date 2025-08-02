@@ -2,8 +2,25 @@
 # Description: revise the original gcm.test from R package "GeneralisedCovarianceMeasure"
 # output calculated product of residual for each subject, which later on could be used to detect the signficance
 # of statistic change between two gcm tests
-library(GeneralisedCovarianceMeasure)
-gcm_test <- function (X = NULL, Y = NULL, Z = NULL, alpha = 0.05, regr.method = "xgboost", 
+#' Calculate the covariance between the calculated GCMs from two different GCM tests
+#' 
+#' @param X TODO
+#' @param Y TODO
+#' @param Z TODO
+#' @param alpha TODO
+#' @param regr.method TODO
+#' @param regr.pars TODO
+#' @param plot.residuals TODO
+#' @param nsim TODO
+#' @param resid.XonZ TODO
+#' @param resid.YonZ TODO
+#' 
+#' @return calculated covariance
+#' 
+#' @import GeneralisedCovarianceMeasure
+#' 
+#' @export
+gcm_test <- function(X = NULL, Y = NULL, Z = NULL, alpha = 0.05, regr.method = "xgboost", 
     regr.pars = list(), plot.residuals = FALSE, nsim = 499L, 
     resid.XonZ = NULL, resid.YonZ = NULL) 
 {
