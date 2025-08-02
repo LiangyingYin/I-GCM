@@ -4,6 +4,7 @@ library(parallel)
 library(pcalg)
 library(GeneralisedCovarianceMeasure)
 source("./src/PCSelect_Parallel_Update.R")
+source("./src/GCM.R")
 
 #**********************************************************************************************************************************************
 # @ Description: calculate the covariance between the calculated GCMs from two different GCM tests
