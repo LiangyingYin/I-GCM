@@ -18,25 +18,25 @@ gcm_test(
 )
 }
 \arguments{
-\item{X}{TODO}
+\item{X}{A(nxp)-dimensional matrix (or data frame) with n observations of p variables.}
 
-\item{Y}{TODO}
+\item{Y}{A(nxp)-dimensional matrix (or data frame) with n observations of p variables.}
 
-\item{Z}{TODO}
+\item{Z}{A(nxp)-dimensional matrix (or data frame) with n observations of p variables.}
 
-\item{alpha}{TODO}
+\item{alpha}{Significance level of the test.}
 
-\item{regr.method}{TODO}
+\item{regr.method}{A string indicating the regression method that is used. Currently implemented are "gam", "xgboost", "kernel.ridge". The regression is performed only if not both resid.XonZ and resid.YonZ are set to NULL.}
 
-\item{regr.pars}{TODO}
+\item{regr.pars}{Some regression methods require a list of additional options}
 
-\item{plot.residuals}{TODO}
+\item{plot.residuals}{A Boolean indicating whether some plots should be shown.}
 
-\item{nsim}{TODO}
+\item{nsim}{An integer indicating the number of bootstrap samples used to approximate the null distribution of the test statistic.}
 
-\item{resid.XonZ}{TODO}
+\item{resid.XonZ}{It is possible to directly provide the residuals instead of performing a regression. If set to NULL, the regression method specified in regr.method is used.}
 
-\item{resid.YonZ}{TODO}
+\item{resid.YonZ}{It is possible to directly provide the residuals instead of performing a regression. If set to NULL, the regression method specified in regr.method is used.}
 }
 \value{
 calculated covariance

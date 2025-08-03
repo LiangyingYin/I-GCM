@@ -2,6 +2,7 @@
 # Description: revise the original gcm.test from R package "GeneralisedCovarianceMeasure"
 # output calculated product of residual for each subject, which later on could be used to detect the signficance
 # of statistic change between two gcm tests, for more details, please refer to the original gcm.test() in R package GeneralisedCovarianceMeasure
+
 #' Calculate the covariance between the calculated GCMs from two different GCM tests
 #' 
 #' @param X A(nxp)-dimensional matrix (or data frame) with n observations of p variables.
