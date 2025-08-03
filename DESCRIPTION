@@ -1,8 +1,8 @@
 Package: IGCM
 Version: 1.0
 Date: 2025-08-02
-Title: IGCM algorith
-Description: Colors that Karl Broman uses in figures.
+Title: Invariant Generalized Covariance Measure 
+Description: Invariant generalized covariance measure (I-GCM) integrates flexible machine learning method with the principle of invariant causal prediction to identify direct causal variables for a given outcome variable in high-dimensional settings.
 Author: Liangyin Yin <yinliangying@gmail.com>,
         So Hon-cheong <hcso85@gmail.com>
 Maintainer: Liangyin Yin <yinliangying@gmail.com>,
